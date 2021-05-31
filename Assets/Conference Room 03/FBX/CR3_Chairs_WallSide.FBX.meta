@@ -1,0 +1,154 @@
+fileFormatVersion: 2
+guid: 74070e4b7d9bce34f9203b51c45a1486
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: CR3_Chair03
+    100002: CR3_Chair04
+    100004: CR3_Chair05
+    100006: CR3_Chair06
+    100008: //RootNode
+    100010: CR_Chair_03
+    100012: CR_Chair_04
+    100014: CR_Chair_05
+    100016: CR_Chair_06
+    100018: CR3_Chair_07
+    100020: CR3_Chair_08
+    100022: CR3_Chair_09
+    100024: CR3_Chair_10
+    400000: CR3_Chair03
+    400002: CR3_Chair04
+    400004: CR3_Chair05
+    400006: CR3_Chair06
+    400008: //RootNode
+    400010: CR_Chair_03
+    400012: CR_Chair_04
+    400014: CR_Chair_05
+    400016: CR_Chair_06
+    400018: CR3_Chair_07
+    400020: CR3_Chair_08
+    400022: CR3_Chair_09
+    400024: CR3_Chair_10
+    2100000: CR3_Chairs_WallSide
+    2100002: CR3_Chairs_WallSide_Chrome
+    2300000: CR3_Chair03
+    2300002: CR3_Chair04
+    2300004: CR3_Chair05
+    2300006: CR3_Chair06
+    2300008: CR_Chair_03
+    2300010: CR_Chair_04
+    2300012: CR_Chair_05
+    2300014: CR_Chair_06
+    2300016: CR3_Chair_07
+    2300018: CR3_Chair_08
+    2300020: CR3_Chair_09
+    2300022: CR3_Chair_10
+    3300000: CR3_Chair03
+    3300002: CR3_Chair04
+    3300004: CR3_Chair05
+    3300006: CR3_Chair06
+    3300008: CR_Chair_03
+    3300010: CR_Chair_04
+    3300012: CR_Chair_05
+    3300014: CR_Chair_06
+    3300016: CR3_Chair_07
+    3300018: CR3_Chair_08
+    3300020: CR3_Chair_09
+    3300022: CR3_Chair_10
+    4300000: CR3_Chair03
+    4300002: CR3_Chair04
+    4300004: CR3_Chair05
+    4300006: CR3_Chair06
+    4300008: CR_Chair_03
+    4300010: CR_Chair_04
+    4300012: CR_Chair_05
+    4300014: CR_Chair_06
+    4300016: CR3_Chair_07
+    4300018: CR3_Chair_08
+    4300020: CR3_Chair_09
+    4300022: CR3_Chair_10
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CR3_Chairs_WallSide
+    second: {fileID: 2100000, guid: 8b2ff73abab8ff14b948b446ad9bfe54, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

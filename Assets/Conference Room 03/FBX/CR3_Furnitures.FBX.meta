@@ -1,0 +1,123 @@
+fileFormatVersion: 2
+guid: 8378db644c7db4848bfb4944ffca8cec
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: CR3_Furniture01
+    100002: CR3_Furniture01_Seat
+    100004: CR3_Furniture02
+    100006: CR3_Furniture02_Seat
+    100008: CR3_Furniture03_Drawers
+    100010: CR3_Furniture3_Marble1
+    100012: CR3_Furniture3_Marble2
+    100014: //RootNode
+    400000: CR3_Furniture01
+    400002: CR3_Furniture01_Seat
+    400004: CR3_Furniture02
+    400006: CR3_Furniture02_Seat
+    400008: CR3_Furniture03_Drawers
+    400010: CR3_Furniture3_Marble1
+    400012: CR3_Furniture3_Marble2
+    400014: //RootNode
+    2100000: CR3_Furnitures
+    2300000: CR3_Furniture01
+    2300002: CR3_Furniture01_Seat
+    2300004: CR3_Furniture02
+    2300006: CR3_Furniture02_Seat
+    2300008: CR3_Furniture03_Drawers
+    2300010: CR3_Furniture3_Marble1
+    2300012: CR3_Furniture3_Marble2
+    3300000: CR3_Furniture01
+    3300002: CR3_Furniture01_Seat
+    3300004: CR3_Furniture02
+    3300006: CR3_Furniture02_Seat
+    3300008: CR3_Furniture03_Drawers
+    3300010: CR3_Furniture3_Marble1
+    3300012: CR3_Furniture3_Marble2
+    4300000: CR3_Furniture01_Seat
+    4300002: CR3_Furniture01
+    4300004: CR3_Furniture02_Seat
+    4300006: CR3_Furniture02
+    4300008: CR3_Furniture03_Drawers
+    4300010: CR3_Furniture3_Marble2
+    4300012: CR3_Furniture3_Marble1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

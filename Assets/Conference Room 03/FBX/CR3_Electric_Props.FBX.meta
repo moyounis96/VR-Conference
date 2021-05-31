@@ -1,0 +1,154 @@
+fileFormatVersion: 2
+guid: abbc54165a5e1bb48b74644f8202838a
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: CR3_AC_Switch
+    100002: CR3_AC_Vent_01
+    100004: CR3_AC_Vent_02
+    100006: CR3_AC_Vent_03
+    100008: CR3_AC_Vent_04
+    100010: CR3_AC_Vent_05
+    100012: CR3_Camera
+    100014: //RootNode
+    100016: CR3_Polyphone
+    100018: CR3_Spot_Light_01
+    100020: CR3_Spot_Light_02
+    100022: CR3_Spot_Light_03
+    100024: CR3_TableLamp_01
+    100026: CR3_TableLamp_02
+    400000: CR3_AC_Switch
+    400002: CR3_AC_Vent_01
+    400004: CR3_AC_Vent_02
+    400006: CR3_AC_Vent_03
+    400008: CR3_AC_Vent_04
+    400010: CR3_AC_Vent_05
+    400012: CR3_Camera
+    400014: //RootNode
+    400016: CR3_Polyphone
+    400018: CR3_Spot_Light_01
+    400020: CR3_Spot_Light_02
+    400022: CR3_Spot_Light_03
+    400024: CR3_TableLamp_01
+    400026: CR3_TableLamp_02
+    2100000: CR3_Electric_Props
+    2100002: CR3_Glass
+    2300000: CR3_AC_Switch
+    2300002: CR3_AC_Vent_01
+    2300004: CR3_AC_Vent_02
+    2300006: CR3_AC_Vent_03
+    2300008: CR3_AC_Vent_04
+    2300010: CR3_AC_Vent_05
+    2300012: CR3_Camera
+    2300014: CR3_Polyphone
+    2300016: CR3_Spot_Light_01
+    2300018: CR3_Spot_Light_02
+    2300020: CR3_Spot_Light_03
+    2300022: CR3_TableLamp_01
+    2300024: CR3_TableLamp_02
+    3300000: CR3_AC_Switch
+    3300002: CR3_AC_Vent_01
+    3300004: CR3_AC_Vent_02
+    3300006: CR3_AC_Vent_03
+    3300008: CR3_AC_Vent_04
+    3300010: CR3_AC_Vent_05
+    3300012: CR3_Camera
+    3300014: CR3_Polyphone
+    3300016: CR3_Spot_Light_01
+    3300018: CR3_Spot_Light_02
+    3300020: CR3_Spot_Light_03
+    3300022: CR3_TableLamp_01
+    3300024: CR3_TableLamp_02
+    4300000: CR3_Spot_Light_03
+    4300002: CR3_AC_Switch
+    4300004: CR3_AC_Vent_01
+    4300006: CR3_AC_Vent_02
+    4300008: CR3_AC_Vent_03
+    4300010: CR3_TableLamp_01
+    4300012: CR3_Camera
+    4300014: CR3_Spot_Light_02
+    4300016: CR3_AC_Vent_04
+    4300018: CR3_AC_Vent_05
+    4300020: CR3_Spot_Light_01
+    4300022: CR3_Polyphone
+    4300024: CR3_TableLamp_02
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
