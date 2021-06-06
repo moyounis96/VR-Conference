@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0aaec9b201b8024fbd3efa9c0aad927, type: 3}
+  m_Name: Male_1
+  m_EditorClassIdentifier: 
+  bottoms:
+  - sprite: {fileID: 21300000, guid: 1541304dc7c403241a8705cdc964cb7a, type: 3}
+    name: 
+    material: {fileID: 2100000, guid: d826c5489963bb849b25af8a01ac2833, type: 2}
+  - sprite: {fileID: 21300000, guid: a5edb5c922922d04a894434b734d3f1c, type: 3}
+    name: 
+    material: {fileID: 2100000, guid: 122ef7c823e6d6348b6361f40080d73f, type: 2}
+  - sprite: {fileID: 21300000, guid: a24547dca4baec5409a4c8bf24c451cf, type: 3}
+    name: 
+    material: {fileID: 2100000, guid: 5188cd75a62e45043b7891aa50f74bc4, type: 2}
+  - sprite: {fileID: 21300000, guid: c3371e79d32c673458c56c03c60990ed, type: 3}
+    name: 
+    material: {fileID: 2100000, guid: 5da82308bc0a5194aba1cd4fa7d0519e, type: 2}
+  shoes:
+  - sprite: {fileID: 21300000, guid: 43fc8abe6c184914d80cddc99ccd3fdf, type: 3}
+    name: Shoes 1
+    material: {fileID: 2100000, guid: f3088fb0fa06a8f4ab7671ec2345c0e5, type: 2}
+  - sprite: {fileID: 21300000, guid: a4a198416fc910d498810e9c302449cf, type: 3}
+    name: Shoes 2
+    material: {fileID: 2100000, guid: d2053d68e37e83549af9b8388712fc5a, type: 2}
+  - sprite: {fileID: 21300000, guid: da0bd51c83fafe2429fa717bb28a0f04, type: 3}
+    name: Shoes 2
+    material: {fileID: 2100000, guid: 214a2ac30f00109438de618f79b9b132, type: 2}
+  - sprite: {fileID: 21300000, guid: b97978f9d60562f48b7747d39f4a1c5d, type: 3}
+    name: Shoes 2
+    material: {fileID: 2100000, guid: 9dacab0167a5c884fad00803ed8ed431, type: 2}
+  - sprite: {fileID: 21300000, guid: e846a883ad80af242a7b0b5d8f08d69f, type: 3}
+    name: Shoes 2
+    material: {fileID: 2100000, guid: 9ed5d2df5745aaf4d93786f6418eb35a, type: 2}
+  tops:
+  - sprite: {fileID: 21300000, guid: 67e6f4b526aa9b04c83a41392d5041c7, type: 3}
+    name: 
+    material: {fileID: 2100000, guid: 6adce5b5c512b3e419bb3d2141c9e202, type: 2}
+  - sprite: {fileID: 21300000, guid: 21e3d2e5bf44ca64b94b30603acf97c0, type: 3}
+    name: 
+    material: {fileID: 2100000, guid: f90e5d832d132b447b6f44965b860fa9, type: 2}
+  - sprite: {fileID: 21300000, guid: 897080cf031b5d1459b8fdf6a892ace1, type: 3}
+    name: 
+    material: {fileID: 2100000, guid: d2af5ef0a53c0604c94e184cf2a5d88d, type: 2}
+  skins:
+  - sprite: {fileID: 21300000, guid: 3c2177de488566647b9789a5a926be46, type: 3}
+    name: Skin 1
+    material: {fileID: 2100000, guid: 6eed8da0ed3523e4b941d01a87ae8c1f, type: 2}
+  - sprite: {fileID: 21300000, guid: c9b78786a43f77c4fb9dc8895135ea74, type: 3}
+    name: Skin 2
+    material: {fileID: 2100000, guid: 5b6962c4f7741af4b9836e0d4859cec2, type: 2}
+  eyes:
+  - sprite: {fileID: 21300000, guid: ff62db73d3af2b64684be0f6ca41b8ac, type: 3}
+    name: 
+    material: {fileID: 2100000, guid: d865269e8a6017e448bd9b5fcde15c74, type: 2}
+  - sprite: {fileID: 21300000, guid: b061da756d8cb634bb36d1382a9b99a3, type: 3}
+    name: 
+    material: {fileID: 2100000, guid: c5150ffcb035d8e44aec500b0e160e81, type: 2}
+  - sprite: {fileID: 21300000, guid: bd25ede9299eecf4fa02cee2241d0889, type: 3}
+    name: 
+    material: {fileID: 2100000, guid: 2b905676d3a4f8546bde71add8bfbbaa, type: 2}
+  - sprite: {fileID: 21300000, guid: 80d2b5acd59ebfa4cb016c6b99038baf, type: 3}
+    name: 
+    material: {fileID: 2100000, guid: 10e03e859b0dd6146b7d65b952527063, type: 2}
+  hairs: []
