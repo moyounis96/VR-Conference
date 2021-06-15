@@ -8,19 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 0b8b47462a63a4e41ae818d423d68ca6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Classroom 3.unity
     guid: c297cdc2e2810954086792a66ef7deb1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Classroom 4.unity
     guid: feb469b602999e54c99a116397bbfd7c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Classroom 5.unity
     guid: a4ace002701eea445a9d680d5a8486d1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Classroom 6.unity
     guid: 25ba62689506baa45abee2899b1729b4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Classroom 1.unity
     guid: 1ab400e40a3bf2047ac2984d489be7c8
   m_configObjects:

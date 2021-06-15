@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CameraMove : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class CameraMove : MonoBehaviour
     }
     void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject() || EventSystem.current.IsPointerOverGameObject(0)) return;
 #if UNITY_EDITOR
         //Touch began, save position
         if (Input.GetMouseButtonDown(0))
@@ -51,8 +53,8 @@ public class CameraMove : MonoBehaviour
             {
                 secondpoint = Input.GetTouch(0).position;
                 //Mainly, about rotate camera. For example, for Screen.width rotate on 180 degree
-                xAngle = xAngTemp + (secondpoint.x - firstpoint.x) * 180.0f / Screen.width;
-                yAngle = yAngTemp - (secondpoint.y - firstpoint.y) * 90.0f / Screen.height;
+                xAngle = xAngTemp - (secondpoint.x - firstpoint.x) * 180.0f / Screen.width;
+                yAngle = yAngTemp + (secondpoint.y - firstpoint.y) * 90.0f / Screen.height;
                 //Rotate camera
                 this.transform.rotation = Quaternion.Euler(yAngle, xAngle, 0.0f);
             }
