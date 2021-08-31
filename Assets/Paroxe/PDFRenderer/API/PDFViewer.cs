@@ -2531,6 +2531,7 @@ namespace Paroxe.PdfRenderer
 
         private void UpdateScrollBarVisibility()
         {
+            return;
             bool vScrollVisible = true;
             bool hScrollVisible = true;
 

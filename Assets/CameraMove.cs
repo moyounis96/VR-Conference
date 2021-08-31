@@ -9,6 +9,15 @@ public class CameraMove : MonoBehaviour
     private float yAngle = 0.0f;
     private float xAngTemp = 0.0f; //temp variable for angle
     private float yAngTemp = 0.0f;
+    private bool forward = false, backward;
+    public static Vector3 initPos;
+    public static Quaternion initRot;
+
+    private void Awake()
+    {
+        initPos = transform.position;
+        initRot = transform.rotation;
+    }
     void Start()
     {
         //Initialization our angles of camera
@@ -18,8 +27,12 @@ public class CameraMove : MonoBehaviour
     }
     void Update()
     {
-        if (EventSystem.current.IsPointerOverGameObject() || EventSystem.current.IsPointerOverGameObject(0)) return;
+        Vector3 translation = new Vector3(0, 0, forward ? 1 : backward ? -1 : 0);
+        transform.Translate(translation * Time.deltaTime);
+        if (EventSystem.current.IsPointerOverGameObject() || EventSystem.current.IsPointerOverGameObject(0) || EventSystem.current.IsPointerOverGameObject(1)) return;
 #if UNITY_EDITOR
+        forward = Input.GetAxis("Vertical") > 0.5f;
+        backward = Input.GetAxis("Vertical") < -0.5f;
         //Touch began, save position
         if (Input.GetMouseButtonDown(0))
         {
@@ -60,5 +73,15 @@ public class CameraMove : MonoBehaviour
             }
         }
 #endif
+    }
+    public void SetForward(bool value)
+    {
+        forward = value;
+        Debug.Log(forward);
+    }
+    public void SetBackward(bool value)
+    {
+        backward = value;
+        Debug.Log(backward);
     }
 }

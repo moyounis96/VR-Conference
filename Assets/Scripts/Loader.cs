@@ -1,50 +1,157 @@
 using Paroxe.PdfRenderer;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEngine.Video;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
+using System;
+using Michsky.UI.ModernUIPack;
+using UnityEngine.EventSystems;
 
 public class Loader : MonoBehaviour
 {
-    public VideoClip[] clips;
-    public VideoPlayer player;
-    public GameObject levelPanel, importPanel, levelsPanel, level5;
+    public static Loader Instance;
+    public Transform xRig;
+    public List<string> questions;
+    public GameObject questionCard, addQuestionCard;
+    public Transform questionsParent;
+    public UITransition fade;
+    public UITransition levelPanel, importPanel, questionsPanel, levelsPanel, onScreenQuestion;
+    public TextMeshProUGUI onScreenQuestionText;
     public PDFViewer pdfViewer;
-    public string pdfPath = "/storage/emulated/0/chickchack.pdf";
-    public void LoadLevel(int index)
+    public string pdfPath = "";
+    private Transform addQuestionTransform;
+    private string currentEditingQuestion;
+    public List<HeadCanvas> heads;
+    private int questionsIndex = 0;
+    private void Awake()
     {
-        levelPanel.SetActive(true);
-        levelsPanel.SetActive(false);
-        importPanel.SetActive(false);
-        if (index < clips.Length)
-        {
-            player.gameObject.SetActive(true);
-            player.Stop();
-            player.clip = clips[index];
-            player.Play();
-            pdfViewer.FilePath = pdfPath;
-            pdfViewer.LoadDocumentFromFile(pdfPath);
-        }
-        else if(index == 4)
-        {
-            player.gameObject.SetActive(false);
-            level5.SetActive(true);
+        if (!Instance) {
+            DontDestroyOnLoad (transform.parent.gameObject);
+            Instance = this;
+            SceneManager.sceneLoaded += delegate {
+                fade.Invoke ("Hide", 0.5f);
+            };
+            questions = new List<string> ();
+            string questionsPref = PlayerPrefs.GetString ("Questions", "");
+            if (!string.IsNullOrEmpty (questionsPref)) {
+                questions = new List<string> (questionsPref.Split ('|'));
+            }
+            foreach (Transform child in questionsParent) {
+                Destroy (child);
+            }
+            foreach (string question in questions) {
+                AddQuestion (question);
+            }
+            addQuestionTransform = Instantiate (addQuestionCard, questionsParent).transform;
+            addQuestionTransform.Find ("AddQuestion").GetComponent<Button> ().onClick.AddListener (() => {
+                string question = addQuestionTransform.GetComponentInChildren<TMP_InputField> ().text;
+                AddNewQuestion (question);
+            });
+            addQuestionTransform.GetComponentInChildren<TMP_InputField> ().onSubmit.AddListener (AddNewQuestion);
+            questionsPanel.onShown.AddListener (delegate {
+                ResetScroll ();
+            });
         }
         else
         {
-            levelPanel.SetActive(false);
-            levelsPanel.SetActive(true);
-            importPanel.SetActive(false);
+            Destroy(transform.parent.gameObject);
         }
+    }
+
+    private void ResetScroll () {
+        questionsPanel.GetComponentInChildren<ScrollRect> ().verticalNormalizedPosition = 0;
+        EventSystem.current.SetSelectedGameObject (null);
+    }
+
+    private void AddNewQuestion (string question) {
+        if (!string.IsNullOrEmpty (question)) {
+            questions.Add (question);
+            AddQuestion (question);
+            addQuestionTransform.GetComponentInChildren<TMP_InputField> ().text = "";
+            Invoke ("ResetScroll", 0.1f);
+            addQuestionTransform.SetAsLastSibling ();
+        }
+    }
+
+    private void AddQuestion (string question) {
+        Transform qPref = Instantiate (questionCard, questionsParent).transform;
+        qPref.GetComponentInChildren<TMP_InputField> ().text = question;
+        qPref.Find ("DeleteQuestion").GetComponent<Button> ().onClick.AddListener (() =>
+        {
+            questions.Remove (question);
+            Destroy (qPref.gameObject);
+        });
+        qPref.GetComponentInChildren<TMP_InputField> ().onSelect.AddListener ((string s) => {
+            currentEditingQuestion = s;
+        });
+        qPref.GetComponentInChildren<TMP_InputField> ().onEndEdit.AddListener ((string s) => {
+            if (currentEditingQuestion == s)
+                return;
+            if (string.IsNullOrEmpty (s)) {
+                questions.Remove (currentEditingQuestion);
+                Destroy (qPref.gameObject);
+            } else {
+                questions[questions.FindIndex (x => x == currentEditingQuestion)] = s;
+            }
+        });
+    }
+    public void ShowQuestion () {
+        questionsIndex = UnityEngine.Random.Range (0, questions.Count);
+        string question = questions[questionsIndex];
+        if (heads.Count > 0) {
+            heads[UnityEngine.Random.Range (0, heads.Count)].ShowQuestion (question);
+        }
+        onScreenQuestionText.text = question;
+        onScreenQuestion.CancelInvoke ();
+        onScreenQuestion.Show ();
+        onScreenQuestion.Invoke ("Hide", 5f);
+    }
+    public void SaveQuestions () {
+        if (questions.Count > 0) {
+            string prefs = questions[0];
+            for (int i = 1; i < questions.Count; i++) {
+                prefs += "|" + questions[i];
+            }
+            PlayerPrefs.SetString ("Questions", prefs);
+        } else {
+            PlayerPrefs.SetString ("Questions", "");
+        }
+        questionsPanel.Hide ();
+        levelsPanel.Show ();
+    }
+    int index;
+    public void LoadLevel(int index)
+    {
+        questionsIndex = 0;
+        heads = new List<HeadCanvas> ();
+        fade.Show();
+        this.index = index;
+        Invoke("LoadScene", fade.Duration() + 0.5f);
+    }
+    void LoadScene()
+    {
+        GetComponent<AudioSource> ().Stop ();
+        xRig.position = CameraMove.initPos;
+        xRig.rotation = CameraMove.initRot;
+        levelPanel.Show();
+        levelsPanel.Hide();
+        questionsPanel.Hide();
+        importPanel.Hide();
+        pdfViewer.enabled = false;
+        pdfViewer.FilePath = pdfPath;
+        pdfViewer.enabled = true;
+        SceneManager.LoadSceneAsync(index);
     }
     public void ShowMenu()
     {
-        player.Stop();
-        player.gameObject.SetActive(false);
-        level5.SetActive(false);
-        levelPanel.SetActive(false);
-        levelsPanel.SetActive(true);
-        importPanel.SetActive(false);
-        WebViewLoader.Instance.DestroyWebView();
+        GetComponent<AudioSource> ().Play ();
+        pdfViewer.enabled = false;
+        levelPanel.Hide();
+        levelsPanel.Hide();
+        questionsPanel.Show();
+        importPanel.Hide();
     }
     public void ImportPDF()
     {
@@ -52,6 +159,7 @@ public class Loader : MonoBehaviour
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN
         Ookii.Dialogs.VistaOpenFileDialog dialog = new Ookii.Dialogs.VistaOpenFileDialog();
         dialog.Title = "Choose your profile picture";
+        dialog.DefaultExt = ".pdf";
         if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
         {
             filePath = dialog.FileName;
@@ -67,11 +175,11 @@ public class Loader : MonoBehaviour
             Debug.Log(pdfPath);
         }, new string[1] { "application/pdf" });
 #endif
-        importPanel.SetActive(false);
-        levelsPanel.SetActive(true);
-        levelPanel.SetActive(false);
+        levelPanel.Hide();
+        levelsPanel.Hide();
+        questionsPanel.Show();
+        importPanel.Hide();
     }
-    
     public void ExitGame()
     {
         Application.Quit();
