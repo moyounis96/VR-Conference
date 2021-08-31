@@ -77,11 +77,9 @@ public class CameraMove : MonoBehaviour
     public void SetForward(bool value)
     {
         forward = value;
-        Debug.Log(forward);
     }
     public void SetBackward(bool value)
     {
         backward = value;
-        Debug.Log(backward);
     }
 }
