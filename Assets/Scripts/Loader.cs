@@ -25,6 +25,7 @@ public class Loader : MonoBehaviour
     private string currentEditingQuestion;
     public List<HeadCanvas> heads;
     private int questionsIndex = 0;
+    public AudioClip clappingEffect;
     private void Awake()
     {
         if (!Instance) {
@@ -107,6 +108,17 @@ public class Loader : MonoBehaviour
         onScreenQuestion.CancelInvoke ();
         onScreenQuestion.Show ();
         onScreenQuestion.Invoke ("Hide", 5f);
+        Invoke("Clap", 3f);
+
+    }
+    void Clap()
+    {
+        GetComponent<AudioSource>().PlayOneShot(clappingEffect);
+        foreach (NPC npc in FindObjectsOfType<NPC>())
+        {
+            if (UnityEngine.Random.Range(0, 100) <= 80)
+                npc.Clap();
+        }
     }
     public void SaveQuestions () {
         if (questions.Count > 0) {
