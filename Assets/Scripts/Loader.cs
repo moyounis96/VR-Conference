@@ -12,25 +12,29 @@ using UnityEngine.EventSystems;
 public class Loader : MonoBehaviour
 {
     public static Loader Instance;
-    public Transform xRig;
+    public OVRPlayerController player;
     public List<string> questions;
     public GameObject questionCard, addQuestionCard;
     public Transform questionsParent;
     public UITransition fade;
-    public UITransition levelPanel, importPanel, questionsPanel, levelsPanel, onScreenQuestion;
+    public UITransition levelPanel, questionsPanel, levelsPanel, onScreenQuestion;
     public TextMeshProUGUI onScreenQuestionText;
-    public PDFViewer pdfViewer;
+    //public PDFViewer pdfViewer;
     public string pdfPath = "";
     private Transform addQuestionTransform;
     private string currentEditingQuestion;
     public List<HeadCanvas> heads;
     private int questionsIndex = 0;
     public AudioClip clappingEffect;
+    private Vector3 initPosition;
+    private Quaternion initRotation;
     private void Awake()
     {
         if (!Instance) {
             DontDestroyOnLoad (transform.parent.gameObject);
             Instance = this;
+            initPosition = player.transform.position;
+            initRotation = player.transform.rotation;
             SceneManager.sceneLoaded += delegate {
                 fade.Invoke ("Hide", 0.5f);
             };
@@ -145,25 +149,26 @@ public class Loader : MonoBehaviour
     void LoadScene()
     {
         GetComponent<AudioSource> ().Stop ();
-        xRig.position = CameraMove.initPos;
-        xRig.rotation = CameraMove.initRot;
+        player.transform.position = initPosition;
+        player.transform.rotation = initRotation;
+        //player.enabled = true;
         levelPanel.Show();
         levelsPanel.Hide();
         questionsPanel.Hide();
-        importPanel.Hide();
-        pdfViewer.enabled = false;
-        pdfViewer.FilePath = pdfPath;
-        pdfViewer.enabled = true;
+        //importPanel.Hide();
+        //pdfViewer.enabled = false;
+        //pdfViewer.FilePath = pdfPath;
+        //pdfViewer.enabled = true;
         SceneManager.LoadSceneAsync(index);
     }
     public void ShowMenu()
     {
         GetComponent<AudioSource> ().Play ();
-        pdfViewer.enabled = false;
+        //pdfViewer.enabled = false;
         levelPanel.Hide();
         levelsPanel.Hide();
         questionsPanel.Show();
-        importPanel.Hide();
+        //importPanel.Hide();
     }
     public void ImportPDF()
     {
@@ -177,20 +182,20 @@ public class Loader : MonoBehaviour
             filePath = dialog.FileName;
         }
         pdfPath = filePath;
-        pdfViewer.FilePath = pdfPath;
+        //pdfViewer.FilePath = pdfPath;
 #elif UNITY_ANDROID || UNITY_IOS
         NativeFilePicker.PickFile((string path) =>
         {
             filePath = path;
             pdfPath = filePath;
-            pdfViewer.FilePath = pdfPath;
+            //pdfViewer.FilePath = pdfPath;
             Debug.Log(pdfPath);
         }, new string[1] { "application/pdf" });
 #endif
         levelPanel.Hide();
         levelsPanel.Hide();
         questionsPanel.Show();
-        importPanel.Hide();
+        //importPanel.Hide();
     }
     public void ExitGame()
     {
