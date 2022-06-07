@@ -19,8 +19,8 @@ public class Loader : MonoBehaviour
     public UITransition fade;
     public UITransition levelPanel, questionsPanel, levelsPanel, onScreenQuestion;
     public TextMeshProUGUI onScreenQuestionText;
-    //public PDFViewer pdfViewer;
-    public string pdfPath = "";
+    public PDFViewer pdfViewer;
+    public string pdfPath = "https://drive.google.com/uc?export=download&id=1p7TzX7JEBbz1sCVB7-Ipi3TXknU0vlJq";
     private Transform addQuestionTransform;
     private string currentEditingQuestion;
     public List<HeadCanvas> heads;
@@ -112,17 +112,10 @@ public class Loader : MonoBehaviour
         onScreenQuestion.CancelInvoke ();
         onScreenQuestion.Show ();
         onScreenQuestion.Invoke ("Hide", 5f);
-        Invoke("Clap", 3f);
-
     }
-    void Clap()
+    void PlayMenuMusic()
     {
-        GetComponent<AudioSource>().PlayOneShot(clappingEffect);
-        foreach (NPC npc in FindObjectsOfType<NPC>())
-        {
-            if (UnityEngine.Random.Range(0, 100) <= 80)
-                npc.Clap();
-        }
+        GetComponent<AudioSource> ().Play ();
     }
     public void SaveQuestions () {
         if (questions.Count > 0) {
@@ -156,15 +149,17 @@ public class Loader : MonoBehaviour
         levelsPanel.Hide();
         questionsPanel.Hide();
         //importPanel.Hide();
-        //pdfViewer.enabled = false;
-        //pdfViewer.FilePath = pdfPath;
-        //pdfViewer.enabled = true;
+        pdfViewer.enabled = false;
+        pdfViewer.FilePath = pdfPath;
+        pdfViewer.enabled = true;
         SceneManager.LoadSceneAsync(index);
     }
     public void ShowMenu()
     {
-        GetComponent<AudioSource> ().Play ();
-        //pdfViewer.enabled = false;
+        GetComponent<AudioSource> ().PlayOneShot (clappingEffect, 1.0f);
+        Invoke ("PlayMenuMusic", clappingEffect.length);
+        Destroy (GameObject.Find ("Env"));
+        pdfViewer.enabled = false;
         levelPanel.Hide();
         levelsPanel.Hide();
         questionsPanel.Show();

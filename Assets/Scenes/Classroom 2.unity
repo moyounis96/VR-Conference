@@ -832,7 +832,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1981386210}
-  m_RootOrder: 54
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &213659118
 GameObject:
@@ -10412,7 +10412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1981386210}
   m_Layer: 0
-  m_Name: _geometry
+  m_Name: Env
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10459,6 +10459,8 @@ Transform:
   - {fileID: 985773852}
   - {fileID: 483168442}
   - {fileID: 230769028}
+  - {fileID: 186831847}
+  - {fileID: 2032982328}
   - {fileID: 1156635766}
   - {fileID: 1387940590}
   - {fileID: 1115118548}
@@ -10483,8 +10485,6 @@ Transform:
   - {fileID: 1459477727}
   - {fileID: 1318453242}
   - {fileID: 325980739}
-  - {fileID: 186831847}
-  - {fileID: 2032982328}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -11106,7 +11106,7 @@ Transform:
   - {fileID: 254969270}
   - {fileID: 1524155085}
   m_Father: {fileID: 1981386210}
-  m_RootOrder: 55
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2033625232
 PrefabInstance:
